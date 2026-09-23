@@ -26,10 +26,11 @@ function Navbar() {
                 ☰
         </button>
 
-        {/* Brand */}
-        <h1 className="text-2xl font-bold">
-          Dev <span className="text-pink-500">Stack</span>
-        </h1>
+        <img
+        src="/logo-text.png"
+        alt="Dev Stack"
+        className="h-9 w-auto object-contain"
+        />
 
         {/* Navigation Links */}
         <div className="hidden gap-8 text-sm font-medium text-gray-600 md:flex">
