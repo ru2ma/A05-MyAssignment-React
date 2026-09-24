@@ -35,7 +35,7 @@ function Hero() {
         {/* Hero Image */}
         <div className="mt-10 flex w-full justify-center md:mt-0 md:w-1/2">
           <img
-            src="/banner-stack.png"
+            src={`${import.meta.env.BASE_URL}banner-stack.png`}
             alt="Development stack illustration"
             className="w-full max-w-[430px] object-contain"
           />

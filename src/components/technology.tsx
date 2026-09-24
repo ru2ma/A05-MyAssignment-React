@@ -17,14 +17,24 @@ function Technologies() {
   const [technologies, setTechnologies] = useState<Technology[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch("/data/technologies.json")
-      .then((response) => response.json())
-      .then((data) => {
-        setTechnologies(data);
-        setLoading(false);
-      });
-  }, []);
+useEffect(() => {
+  fetch(`${import.meta.env.BASE_URL}data/technologies.json`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Failed to load technologies");
+      }
+
+      return response.json();
+    })
+    .then((data) => {
+      setTechnologies(data);
+      setLoading(false);
+    })
+    .catch((error) => {
+      console.error("Error loading technologies:", error);
+      setLoading(false);
+    });
+}, []);
 
   const addToStack = (name: string) => {
     if (selectedStack.includes(name)) {

@@ -27,8 +27,8 @@ function Navbar() {
         </button>
 
         <img
-        src="/logo-text.png"
-        alt="Dev Stack"
+        src={`${import.meta.env.BASE_URL}logo-text.png`}
+        // alt="Dev Stack"
         className="h-9 w-auto object-contain"
         />
 
